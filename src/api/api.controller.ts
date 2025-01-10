@@ -17,7 +17,8 @@ export class ApiController {
       throw new Error('City (q) parameter is required for the weather endpoint');
     }
 
-    // Fetch weather data from the service
-    return this.apiService.getData(query.endpoint, { q: query.q });
+    const data = await this.apiService.getData(query.endpoint, { q: query.q });
+
+    return data;  // Return formatted text instead of raw JSON
   }
 }
