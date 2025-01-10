@@ -23,7 +23,7 @@ export class ApiService {
       // Log and throw exception if any error occurs
       console.error('Error fetching data from OpenWeatherMap:', error);
 
-      // Throw a HttpException with error details
+      // Throw a HttpException with error details 
       throw new HttpException(
         error.response?.data || 'Error fetching data',
         error.response?.status || 500,
